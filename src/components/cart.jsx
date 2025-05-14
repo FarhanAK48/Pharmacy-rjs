@@ -28,6 +28,7 @@ const [totalAmount, setTotalAmount] = useState(0);
   const removeCart = (item) => {
     let categories = JSON.parse(localStorage.getItem("cartItem")) || [];
     categories = categories.filter(ele => ele.name !== item.name);
+    setTotalAmount(totalAmount - (item.Price * item.quantity))
     setCartItem(categories)
 localStorage.setItem('cartItem', JSON.stringify(categories))
 
@@ -43,9 +44,9 @@ localStorage.setItem('cartItem', JSON.stringify(categories))
           cartItems.map((item, index) => (
             <div
               key={index}
-              className=" bg-white border transition-transform ease-in-out duration-500 hover:scale-105 border-gray-200 rounded-lg shadow-sm "
+              className=" bg-white border border-gray-200 rounded-lg shadow-sm "
             >
-              <h5 className="mb-2 px-2 flex justify-start text-lg font-bold tracking-tight text-gray-600 dark:text-white">
+              <h5 className="mb-2 px-2 flex justify-start text-lg font-bold tracking-tight text-gray-600">
                 {item.name}
               </h5>
               <p className="text-sm px-2 flex justify-start text-gray-400">

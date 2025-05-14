@@ -181,7 +181,7 @@ const Product = () => {
         {filterMedicine.map((item, index) => (
           <div
             key={index}
-            className=" bg-white border transition-transform ease-in-out duration-500 hover:scale-105 border-gray-200 rounded-lg shadow-sm "
+            className=" bg-white border border-gray-200 rounded-lg shadow-sm "
           >
             <div className="flex justify-between">
 
