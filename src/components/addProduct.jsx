@@ -82,7 +82,7 @@ const AddProduct = ({
           (item) => item.name.toLowerCase() === formData.name.toLowerCase()
         );
         if (exists) {
-          console.log("This name already exists in list");
+          alert("This name already exists in list");
         } else {
           addProduct(
             id,
